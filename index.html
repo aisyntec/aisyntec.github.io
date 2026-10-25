@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SYNTEC TECHNOLOGY - 한국신텍</title>
-    <!-- 구글 폰트 및 아이콘 라이브러리(FontAwesome) 완벽 연동 -->
+    <!-- 구글 폰트 및 아이콘 라이브러리 경로 수정 -->
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="https://cloudflare.com">
     
@@ -67,7 +67,7 @@
         .channel-cafe .channel-name i { color: #03c75a; font-size: 15px; }
         .channel-cafe .btn-go { background: #03c75a; color: white; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; }
 
-        /* 하단 고정형 네트워크 접속 버튼 */
+        /* 하단 고정형 버튼 */
         .action-area { padding: 10px 20px 25px 20px; margin-top: auto; }
         .btn-connect { display: flex; align-items: center; justify-content: center; width: 100%; background: #0f4c81; color: white; padding: 15px; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(15, 76, 129, 0.25); transition: all 0.2s ease; }
         .btn-connect i { margin-right: 8px; font-size: 16px; }
@@ -79,9 +79,9 @@
 <body>
 
 <div class="wrapper">
-    <!-- 상단 영역: 이미지 배너 주소 복구 (공작기계 가공용 정밀 테크 이미지 연동) -->
+    <!-- 상단 영역: 저장소에 등록하신 파일 경로로 연결 완료 -->
     <div class="hero-banner">
-        <img src="https://unsplash.com" alt="SYNTEC 장비 이미지">
+        <img src="./syntec_main.png" alt="SYNTEC 장비 이미지">
     </div>
     
     <!-- 메인 본문 콘텐츠 -->
@@ -119,7 +119,7 @@
         <!-- 링크 배너 섹션 -->
         <div class="channel-group">
             <!-- 채널 1: SYNTEC 컨트롤러 유튜브 -->
-            <a href="https://www.youtube.com/@Ai-SYNTEC" target="_blank" class="channel-row channel-youtube">
+            <a href="https://youtube.com" target="_blank" class="channel-row channel-youtube">
                 <div class="channel-name">
                     <i class="fa-brands fa-youtube"></i> SYNTEC 컨트롤러
                 </div>
@@ -127,7 +127,7 @@
             </a>
             
             <!-- 채널 2: OneCNC 캐드∙캠 유튜브 -->
-            <a href="https://www.youtube.com/@OneCAD-CAM" target="_blank" class="channel-row channel-youtube">
+            <a href="https://youtube.com" target="_blank" class="channel-row channel-youtube">
                 <div class="channel-name">
                     <i class="fa-brands fa-youtube"></i> OneCNC 캐드∙캠
                 </div>
@@ -135,7 +135,7 @@
             </a>
             
             <!-- 채널 3: 한국신텍 공식 카페 -->
-            <a href="https://cafe.naver.com/hardinge" target="_blank" class="channel-row channel-cafe">
+            <a href="https://naver.com" target="_blank" class="channel-row channel-cafe">
                 <div class="channel-name">
                     <i class="fa-solid fa-mug-hot"></i> 한국신텍 공식 카페
                 </div>
@@ -144,9 +144,9 @@
         </div>
     </div>
     
-    <!-- 하단 고정형 버튼: 신텍 유튜브 채널 연동 및 아이콘 수정 완료 -->
+    <!-- 하단 고정형 버튼 -->
     <div class="action-area">
-        <a href="https://www.youtube.com/@Ai-SYNTEC" target="_blank" class="btn-connect">
+        <a href="https://youtube.com" target="_blank" class="btn-connect">
             <i class="fa-brands fa-youtube"></i> 신텍 유튜브 채널 바로가기
         </a>
         <p class="footer">© 2026 SYNTEC TECHNOLOGY. All rights reserved.</p>
