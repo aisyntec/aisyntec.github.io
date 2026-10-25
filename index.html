@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SYNTEC TECHNOLOGY - 한국신텍</title>
-    <!-- 외부 아이콘 및 폰트 라이브러리 -->
+    <!-- 외부 아이콘 및 폰트 라이브러리 연결 링크 완벽 복구 -->
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
@@ -15,68 +15,66 @@
         /* 모바일 최적화 컨테이너 */
         .wrapper { width: 100%; max-width: 450px; background: #ffffff; min-height: 100vh; display: flex; flex-direction: column; box-shadow: 0 0 25px rgba(0,0,0,0.1); position: relative; }
         
-        /* 1. 상단 히어로 배너 */
+        /* 1. 상단 히어로 배너 (이미지 잘림 해제 및 세로폭 자동 최적화) */
         .hero-banner { 
             width: 100% !important;
-            height: 160px !important;
+            height: auto !important;
+            max-height: none !important;
             overflow: hidden;
             border-radius: 0 0 20px 20px; 
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            background-color: #0c6cd4;
+            background-color: #044da1;
             margin: 0 !important;
             padding: 0 !important;
+            line-height: 0;
         }
         .hero-banner img {
             width: 100% !important;
-            height: 100% !important;
-            object-fit: cover !important;
+            height: auto !important;
+            object-fit: contain !important; /* 이미지 절대 잘리지 않도록 해제 */
             display: block !important;
         }
 
-        /* 메인 콘텐츠 바디 (화면 밀착을 위해 패딩 및 간격 최소화) */
-        .content { padding: 12px 16px; flex-grow: 1; display: flex; flex-direction: column; gap: 8px; }
+        /* 메인 콘텐츠 바디 (한 화면에 다 들어오도록 여백 축소) */
+        .content { padding: 10px 16px; flex-grow: 1; display: flex; flex-direction: column; gap: 6px; }
         
         /* 취급품목 섹션 */
         .items-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 8px 12px; }
-        .items-title { font-size: 13px; font-weight: 700; color: #0f4c81; margin-bottom: 4px; display: flex; align-items: center; gap: 4px; }
-        .items-title i { font-size: 13px; }
-        .items-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; list-style: none; }
-        .items-grid li { font-size: 12px; color: #4a5568; padding-left: 12px; position: relative; line-height: 1.4; word-break: keep-all; }
+        .items-title { font-size: 12.5px; font-weight: 700; color: #0f4c81; margin-bottom: 4px; display: flex; align-items: center; gap: 4px; }
+        .items-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 4px; list-style: none; }
+        .items-grid li { font-size: 11.5px; color: #4a5568; padding-left: 12px; position: relative; line-height: 1.4; word-break: keep-all; }
         .items-grid li::before { content: "✓"; position: absolute; left: 0; color: #3182ce; font-weight: bold; }
         
-        /* 기업 정보 정보 박스 (한 줄 정렬 및 높이 축소) */
-        .contact-box { background: #edf2f7; border-radius: 12px; padding: 10px 12px; font-size: 12.5px; display: flex; flex-direction: column; gap: 5px; }
-        .contact-row-flex { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-        .contact-item { display: flex; align-items: center; gap: 4px; }
-        .contact-label { color: #555555; font-weight: 500; min-width: auto; }
+        /* 기업 정보 정보 박스 (직통 번호 좌측 균형 배치) */
+        .contact-box { background: #edf2f7; border-radius: 12px; padding: 8px 12px; font-size: 12px; display: flex; flex-direction: column; gap: 4px; }
+        .contact-row-flex { display: flex; align-items: center; width: 100%; gap: 24px; } /* gap 조절로 직통을 좌측으로 균형 있게 당김 */
+        .contact-item { display: flex; align-items: center; gap: 6px; }
+        .contact-label { color: #555555; font-weight: 500; }
         .contact-value { color: #0f4c81; font-weight: 700; }
         .contact-value a { color: #0f4c81; text-decoration: none; }
         
-        /* 멀티 링크 그룹 섹션 */
-        .channel-group { display: flex; flex-direction: column; gap: 6px; }
-        .channel-row { display: flex; align-items: center; justify-content: space-between; border-radius: 10px; padding: 8px 12px; text-decoration: none; border: 1px solid transparent; transition: background 0.2s ease; }
+        /* 멀티 링크 그룹 섹션 (높이 컴팩트하게 압축) */
+        .channel-group { display: flex; flex-direction: column; gap: 5px; }
+        .channel-row { display: flex; align-items: center; justify-content: space-between; border-radius: 10px; padding: 7px 12px; text-decoration: none; border: 1px solid transparent; }
         
         /* 유튜브 스타일 */
         .channel-youtube { background: #fdf2f2; border-color: #fde8e8; }
-        .channel-youtube:active { background: #fbe2e2; }
-        .channel-youtube .channel-name { font-size: 12.5px; font-weight: 700; color: #1a202c; display: flex; align-items: center; gap: 6px; }
+        .channel-youtube .channel-name { font-size: 12px; font-weight: 700; color: #1a202c; display: flex; align-items: center; gap: 6px; }
         .channel-youtube .channel-name i { color: #ff0000; font-size: 14px; }
-        .channel-youtube .btn-go { background: #ff0000; color: white; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; }
+        .channel-youtube .btn-go { background: #ff0000; color: white; padding: 3px 9px; border-radius: 6px; font-size: 10.5px; font-weight: 700; }
         
         /* 네이버 카페 스타일 */
         .channel-cafe { background: #f2fbf5; border-color: #e2f7e9; }
-        .channel-cafe:active { background: #e2f5e9; }
-        .channel-cafe .channel-name { font-size: 12.5px; font-weight: 700; color: #1a202c; display: flex; align-items: center; gap: 6px; }
+        .channel-cafe .channel-name { font-size: 12px; font-weight: 700; color: #1a202c; display: flex; align-items: center; gap: 6px; }
         .channel-cafe .channel-name i { color: #03c75a; font-size: 14px; }
-        .channel-cafe .btn-go { background: #03c75a; color: white; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; }
+        .channel-cafe .btn-go { background: #03c75a; color: white; padding: 3px 9px; border-radius: 6px; font-size: 10.5px; font-weight: 700; }
 
         /* 하단 고정형 버튼 */
-        .action-area { padding: 8px 16px 16px 16px; margin-top: auto; }
-        .btn-connect { display: flex; align-items: center; justify-content: center; width: 100%; background: #0f4c81; color: white; padding: 12px; border: none; border-radius: 12px; font-size: 15px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(15, 76, 129, 0.25); transition: all 0.2s ease; }
-        .btn-connect i { margin-right: 6px; font-size: 15px; }
-        .btn-connect:active { background: #0a3356; transform: scale(0.99); }
+        .action-area { padding: 6px 16px 12px 16px; margin-top: auto; }
+        .btn-connect { display: flex; align-items: center; justify-content: center; width: 100%; background: #0f4c81; color: white; padding: 10px; border: none; border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(15, 76, 129, 0.25); }
+        .btn-connect i { margin-right: 6px; font-size: 14px; }
         
-        .footer { text-align: center; font-size: 10px; color: #a0aec0; margin-top: 6px; }
+        .footer { text-align: center; font-size: 9.5px; color: #a0aec0; margin-top: 4px; }
     </style>
 </head>
 <body>
@@ -103,7 +101,7 @@
             </ul>
         </div>
         
-        <!-- 기업 정보 정보 박스 (문의와 직통 번호를 가로로 한 줄 정렬 완료) -->
+        <!-- 기업 정보 정보 박스 -->
         <div class="contact-box">
             <div class="contact-row-flex">
                 <div class="contact-item">
@@ -115,9 +113,11 @@
                     <span class="contact-value"><a href="tel:010-2498-8823">010-2498-8823</a></span>
                 </div>
             </div>
-            <div class="contact-row-flex" style="justify-content: flex-start; gap: 8px;">
-                <span class="contact-label">홈페이지</span>
-                <span class="contact-value"><a href="https://syntec.kr" target="_blank">syntec.kr</a></span>
+            <div class="contact-row-flex">
+                <div class="contact-item">
+                    <span class="contact-label">홈페이지</span>
+                    <span class="contact-value"><a href="https://syntec.kr" target="_blank">syntec.kr</a></span>
+                </div>
             </div>
         </div>
         
