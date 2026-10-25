@@ -15,10 +15,10 @@
         /* 모바일 최적화 컨테이너 */
         .wrapper { width: 100%; max-width: 450px; background: #ffffff; min-height: 100vh; display: flex; flex-direction: column; box-shadow: 0 0 25px rgba(0,0,0,0.1); position: relative; }
         
-        /* 1. 상단 히어로 배너 (한 화면에 다 들어오도록 세로폭을 대폭 축소) */
+        /* 1. 상단 히어로 배너 */
         .hero-banner { 
             width: 100% !important;
-            height: 160px !important; /* 세로 크기를 크게 줄여 하단 콘텐츠를 위로 끌어올렸습니다 */
+            height: 160px !important;
             overflow: hidden;
             border-radius: 0 0 20px 20px; 
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
@@ -29,26 +29,26 @@
         .hero-banner img {
             width: 100% !important;
             height: 100% !important;
-            object-fit: cover !important; /* 슬림해진 세로폭에 맞춰 장비 중심부가 꽉 차게 정렬 */
+            object-fit: cover !important;
             display: block !important;
         }
 
-        /* 메인 콘텐츠 바디 (한 화면 밀착을 위해 간격 축소) */
-        .content { padding: 14px 18px; flex-grow: 1; display: flex; flex-direction: column; gap: 10px; }
+        /* 메인 콘텐츠 바디 (화면 밀착을 위해 패딩 및 간격 최소화) */
+        .content { padding: 12px 16px; flex-grow: 1; display: flex; flex-direction: column; gap: 8px; }
         
-        /* 취급품목 섹션 2열 그리드 */
-        .items-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 10px 12px; }
-        .items-title { font-size: 13px; font-weight: 700; color: #0f4c81; margin-bottom: 6px; display: flex; align-items: center; gap: 4px; }
+        /* 취급품목 섹션 */
+        .items-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 8px 12px; }
+        .items-title { font-size: 13px; font-weight: 700; color: #0f4c81; margin-bottom: 4px; display: flex; align-items: center; gap: 4px; }
         .items-title i { font-size: 13px; }
         .items-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; list-style: none; }
         .items-grid li { font-size: 12px; color: #4a5568; padding-left: 12px; position: relative; line-height: 1.4; word-break: keep-all; }
         .items-grid li::before { content: "✓"; position: absolute; left: 0; color: #3182ce; font-weight: bold; }
         
-        /* 기업 정보 정보 박스 */
-        .contact-box { background: #edf2f7; border-radius: 12px; padding: 10px 12px; font-size: 12.5px; }
-        .contact-row { display: flex; margin-bottom: 4px; align-items: center; }
-        .contact-row:last-child { margin-bottom: 0; }
-        .contact-label { width: 60px; color: #555555; font-weight: 500; }
+        /* 기업 정보 정보 박스 (한 줄 정렬 및 높이 축소) */
+        .contact-box { background: #edf2f7; border-radius: 12px; padding: 10px 12px; font-size: 12.5px; display: flex; flex-direction: column; gap: 5px; }
+        .contact-row-flex { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .contact-item { display: flex; align-items: center; gap: 4px; }
+        .contact-label { color: #555555; font-weight: 500; min-width: auto; }
         .contact-value { color: #0f4c81; font-weight: 700; }
         .contact-value a { color: #0f4c81; text-decoration: none; }
         
@@ -71,18 +71,18 @@
         .channel-cafe .btn-go { background: #03c75a; color: white; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; }
 
         /* 하단 고정형 버튼 */
-        .action-area { padding: 10px 18px 20px 18px; margin-top: auto; }
+        .action-area { padding: 8px 16px 16px 16px; margin-top: auto; }
         .btn-connect { display: flex; align-items: center; justify-content: center; width: 100%; background: #0f4c81; color: white; padding: 12px; border: none; border-radius: 12px; font-size: 15px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(15, 76, 129, 0.25); transition: all 0.2s ease; }
         .btn-connect i { margin-right: 6px; font-size: 15px; }
         .btn-connect:active { background: #0a3356; transform: scale(0.99); }
         
-        .footer { text-align: center; font-size: 10px; color: #a0aec0; margin-top: 8px; }
+        .footer { text-align: center; font-size: 10px; color: #a0aec0; margin-top: 6px; }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
-    <!-- 상단 영역: 세로 슬림 모드로 완벽 수정 -->
+    <!-- 상단 영역 -->
     <div class="hero-banner">
         <img src="./syntec_main.png" alt="SYNTEC 장비 이미지">
     </div>
@@ -103,17 +103,19 @@
             </ul>
         </div>
         
-        <!-- 기업 정보 정보 박스 -->
+        <!-- 기업 정보 정보 박스 (문의와 직통 번호를 가로로 한 줄 정렬 완료) -->
         <div class="contact-box">
-            <div class="contact-row">
-                <span class="contact-label">문의</span>
-                <span class="contact-value"><a href="tel:070-8615-1134">070-8615-1134</a></span>
+            <div class="contact-row-flex">
+                <div class="contact-item">
+                    <span class="contact-label">문의</span>
+                    <span class="contact-value"><a href="tel:070-8615-1134">070-8615-1134</a></span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">직통</span>
+                    <span class="contact-value"><a href="tel:010-2498-8823">010-2498-8823</a></span>
+                </div>
             </div>
-            <div class="contact-row">
-                <span class="contact-label">직통</span>
-                <span class="contact-value"><a href="tel:010-2498-8823">010-2498-8823</a></span>
-            </div>
-            <div class="contact-row">
+            <div class="contact-row-flex" style="justify-content: flex-start; gap: 8px;">
                 <span class="contact-label">홈페이지</span>
                 <span class="contact-value"><a href="https://syntec.kr" target="_blank">syntec.kr</a></span>
             </div>
@@ -122,7 +124,7 @@
         <!-- 링크 배너 섹션 -->
         <div class="channel-group">
             <!-- 채널 1: SYNTEC 컨트롤러 유튜브 -->
-            <a href="https://youtube.com" target="_blank" class="channel-row channel-youtube">
+            <a href="https://www.youtube.com/@Ai-SYNTEC" target="_blank" class="channel-row channel-youtube">
                 <div class="channel-name">
                     <i class="fa-brands fa-youtube"></i> SYNTEC 컨트롤러
                 </div>
@@ -130,7 +132,7 @@
             </a>
             
             <!-- 채널 2: OneCNC 캐드∙캠 유튜브 -->
-            <a href="https://youtube.com" target="_blank" class="channel-row channel-youtube">
+            <a href="https://www.youtube.com/@OneCAD-CAM" target="_blank" class="channel-row channel-youtube">
                 <div class="channel-name">
                     <i class="fa-brands fa-youtube"></i> OneCNC 캐드∙캠
                 </div>
@@ -138,7 +140,7 @@
             </a>
             
             <!-- 채널 3: 한국신텍 공식 카페 -->
-            <a href="https://naver.com" target="_blank" class="channel-row channel-cafe">
+            <a href="https://cafe.naver.com/hardinge" target="_blank" class="channel-row channel-cafe">
                 <div class="channel-name">
                     <i class="fa-solid fa-mug-hot"></i> 한국신텍 공식 카페
                 </div>
@@ -149,7 +151,7 @@
     
     <!-- 하단 고정형 버튼 -->
     <div class="action-area">
-        <a href="https://youtube.com" target="_blank" class="btn-connect">
+        <a href="https://www.youtube.com/@Ai-SYNTEC" target="_blank" class="btn-connect">
             <i class="fa-brands fa-youtube"></i> 신텍 유튜브 채널 바로가기
         </a>
         <p class="footer">© 2026 SYNTEC TECHNOLOGY. All rights reserved.</p>
