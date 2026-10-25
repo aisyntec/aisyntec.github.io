@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SYNTEC TECHNOLOGY - 한국신텍</title>
-    <!-- [보안 우회 보완] 구글 공식 머티리얼 아이콘 CDN 라이브러리 정상 주소 연동 -->
+    <!-- 구글 공식 머티리얼 아이콘 CDN 라이브러리 연동 -->
     <link href="https://googleapis.com" rel="stylesheet">
     <link href="https://googleapis.com" rel="stylesheet">
     
@@ -12,7 +12,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif; }
         body { background: #f0f4f8; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; color: #1a202c; padding: 0; }
         
-        /* 모바일 최적화 컨테이너 (가로폭 450px 복구 및 컴팩트 배치) */
+        /* 모바일 최적화 컨테이너 */
         .wrapper { width: 100%; max-width: 450px; background: #ffffff; min-height: 100vh; display: flex; flex-direction: column; box-shadow: 0 0 25px rgba(0,0,0,0.1); position: relative; }
         
         /* 1. 상단 히어로 배너 */
@@ -33,33 +33,30 @@
             display: block !important;
         }
 
-        /* 2. 국기 배너 영역 (저장소 내부의 국기 이미지 연동 스타일 최적화) */
+        /* 2. 국기 배너 영역 (새로 올리신 한국대만중국.png 투명 파일 경로 연동 💡) */
         .flag-container {
             width: 100%;
             text-align: center;
-            margin-top: -25px; 
+            margin-top: -24px; /* 상단 배너에 입체적으로 반쯤 걸치는 높이 설정 */
             position: relative;
             z-index: 999;
             line-height: 0;
-            padding: 0 18px;
         }
         .flag-box {
-            display: inline-block;
-            background: #ffffff;
-            padding: 4px;
-            border-radius: 50px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
-            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
         .flag-box img {
-            height: 38px; 
+            height: 48px; /* S26 및 일반 모바일 화면에서 가장 보기 좋은 균형 잡힌 높이 크기 */
             width: auto;
+            object-fit: contain;
             display: block;
-            border-radius: 40px;
+            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.25)); /* 투명 국기 배지 뒤에만 그림자를 주는 고급 효과 */
         }
 
-        /* 메인 콘텐츠 바디 (세로 간격 압축) */
-        .content { padding: 8px 18px 4px 18px; flex-grow: 1; display: flex; flex-direction: column; gap: 4px; }
+        /* 메인 콘텐츠 바디 */
+        .content { padding: 8px 18px 12px 18px; display: flex; flex-direction: column; gap: 5px; }
         
         /* 취급품목 섹션 */
         .items-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 6px 12px; }
@@ -92,12 +89,14 @@
         .channel-cafe .channel-name .material-icons { color: #03c75a; font-size: 16px; }
         .channel-cafe .btn-go { background: #03c75a; color: white; padding: 2px 8px; border-radius: 50px; font-size: 10px; font-weight: 700; }
 
-        /* 하단 고정형 버튼 영역 */
-        .action-area { padding: 4px 18px 8px 18px; margin-top: auto; }
-        .btn-connect { display: flex; align-items: center; justify-content: center; width: 100%; background: #0f4c81; color: white; padding: 9px; border: none; border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 3px 10px rgba(15, 76, 129, 0.25); }
+        /* 파란색 대형 버튼 밀착 연동 */
+        .btn-connect-container { margin-top: 4px; width: 100%; }
+        .btn-connect { display: flex; align-items: center; justify-content: center; width: 100%; background: #0f4c81; color: white; padding: 10px; border: none; border-radius: 12px; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 3px 10px rgba(15, 76, 129, 0.25); }
         .btn-connect .material-icons { margin-right: 6px; font-size: 16px; }
         
-        .footer { text-align: center; font-size: 9px; color: #a0aec0; margin-top: 2px; }
+        /* 하단 저작권 표시 영역 */
+        .action-area { padding: 4px 18px 12px 18px; margin-top: auto; }
+        .footer { text-align: center; font-size: 9px; color: #a0aec0; }
     </style>
 </head>
 <body>
@@ -108,10 +107,10 @@
         <img src="./syntec_main.png" alt="SYNTEC 장비 이미지">
     </div>
     
-    <!-- 국기 중간 걸치기 디자인 영역 (내부 국기 파일 이름 연동 완료) -->
+    <!-- 국기 중간 걸치기 디자인 영역 (업로드하신 한국대만중국.png 연동 및 흰 바탕 박스 제거 완벽 수정 완료) -->
     <div class="flag-container">
         <div class="flag-box">
-            <img src="./image_c3496cb9.jpg" alt="한국 대만 중국 국기">
+            <img src="./한국대만중국.png" alt="한국 대만 중국 국기 배지">
         </div>
     </div>
     
@@ -173,17 +172,20 @@
                 <div class="btn-go">바로가기</div>
             </a>
         </div>
+
+        <!-- 하단 파란색 대형 버튼 밀착 정렬 완료 -->
+        <div class="btn-connect-container">
+            <a href="https://youtube.com" target="_blank" class="btn-connect">
+                <span class="material-icons">play_circle_filled</span> 신텍 유튜브 채널 바로가기
+            </a>
+        </div>
     </div>
     
-    <!-- 하단 고정형 버튼 영역 -->
+    <!-- 최하단 저작권 영역 -->
     <div class="action-area">
-        <a href="https://youtube.com" target="_blank" class="btn-connect">
-            <span class="material-icons">play_circle_filled</span> 신텍 유튜브 채널 바로가기
-        </a>
         <p class="footer">© 2026 SYNTEC TECHNOLOGY. All rights reserved.</p>
     </div>
 </div>
 
 </body>
 </html>
-
