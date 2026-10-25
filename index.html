@@ -15,74 +15,74 @@
         /* 모바일 최적화 컨테이너 */
         .wrapper { width: 100%; max-width: 450px; background: #ffffff; min-height: 100vh; display: flex; flex-direction: column; box-shadow: 0 0 25px rgba(0,0,0,0.1); position: relative; }
         
-        /* 1. 상단 히어로 배너 (높이 지정을 완전히 없애고 이미지 원본 비율 보존) */
+        /* 1. 상단 히어로 배너 (한 화면에 다 들어오도록 세로폭을 대폭 축소) */
         .hero-banner { 
             width: 100% !important;
-            height: auto !important;
-            display: block !important;
+            height: 160px !important; /* 세로 크기를 크게 줄여 하단 콘텐츠를 위로 끌어올렸습니다 */
             overflow: hidden;
             border-radius: 0 0 20px 20px; 
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            background: #ffffff !important;
+            background-color: #0c6cd4;
             margin: 0 !important;
             padding: 0 !important;
         }
         .hero-banner img {
             width: 100% !important;
-            height: auto !important;
+            height: 100% !important;
+            object-fit: cover !important; /* 슬림해진 세로폭에 맞춰 장비 중심부가 꽉 차게 정렬 */
             display: block !important;
         }
 
-        /* 메인 콘텐츠 바디 */
-        .content { padding: 18px 20px; flex-grow: 1; display: flex; flex-direction: column; gap: 14px; }
+        /* 메인 콘텐츠 바디 (한 화면 밀착을 위해 간격 축소) */
+        .content { padding: 14px 18px; flex-grow: 1; display: flex; flex-direction: column; gap: 10px; }
         
         /* 취급품목 섹션 2열 그리드 */
-        .items-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 14px; }
-        .items-title { font-size: 13.5px; font-weight: 700; color: #0f4c81; margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
-        .items-title i { font-size: 14px; }
-        .items-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; list-style: none; }
-        .items-grid li { font-size: 12.5px; color: #4a5568; padding-left: 14px; position: relative; line-height: 1.4; word-break: keep-all; }
+        .items-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 10px 12px; }
+        .items-title { font-size: 13px; font-weight: 700; color: #0f4c81; margin-bottom: 6px; display: flex; align-items: center; gap: 4px; }
+        .items-title i { font-size: 13px; }
+        .items-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; list-style: none; }
+        .items-grid li { font-size: 12px; color: #4a5568; padding-left: 12px; position: relative; line-height: 1.4; word-break: keep-all; }
         .items-grid li::before { content: "✓"; position: absolute; left: 0; color: #3182ce; font-weight: bold; }
         
         /* 기업 정보 정보 박스 */
-        .contact-box { background: #edf2f7; border-radius: 12px; padding: 12px 14px; font-size: 13px; }
-        .contact-row { display: flex; margin-bottom: 6px; align-items: center; }
+        .contact-box { background: #edf2f7; border-radius: 12px; padding: 10px 12px; font-size: 12.5px; }
+        .contact-row { display: flex; margin-bottom: 4px; align-items: center; }
         .contact-row:last-child { margin-bottom: 0; }
-        .contact-label { width: 65px; color: #555555; font-weight: 500; }
+        .contact-label { width: 60px; color: #555555; font-weight: 500; }
         .contact-value { color: #0f4c81; font-weight: 700; }
         .contact-value a { color: #0f4c81; text-decoration: none; }
         
         /* 멀티 링크 그룹 섹션 */
-        .channel-group { display: flex; flex-direction: column; gap: 8px; }
-        .channel-row { display: flex; align-items: center; justify-content: space-between; border-radius: 10px; padding: 10px 14px; text-decoration: none; border: 1px solid transparent; transition: background 0.2s ease; }
+        .channel-group { display: flex; flex-direction: column; gap: 6px; }
+        .channel-row { display: flex; align-items: center; justify-content: space-between; border-radius: 10px; padding: 8px 12px; text-decoration: none; border: 1px solid transparent; transition: background 0.2s ease; }
         
         /* 유튜브 스타일 */
         .channel-youtube { background: #fdf2f2; border-color: #fde8e8; }
         .channel-youtube:active { background: #fbe2e2; }
-        .channel-youtube .channel-name { font-size: 13px; font-weight: 700; color: #1a202c; display: flex; align-items: center; gap: 6px; }
-        .channel-youtube .channel-name i { color: #ff0000; font-size: 15px; }
-        .channel-youtube .btn-go { background: #ff0000; color: white; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; }
+        .channel-youtube .channel-name { font-size: 12.5px; font-weight: 700; color: #1a202c; display: flex; align-items: center; gap: 6px; }
+        .channel-youtube .channel-name i { color: #ff0000; font-size: 14px; }
+        .channel-youtube .btn-go { background: #ff0000; color: white; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; }
         
         /* 네이버 카페 스타일 */
         .channel-cafe { background: #f2fbf5; border-color: #e2f7e9; }
         .channel-cafe:active { background: #e2f5e9; }
-        .channel-cafe .channel-name { font-size: 13px; font-weight: 700; color: #1a202c; display: flex; align-items: center; gap: 6px; }
-        .channel-cafe .channel-name i { color: #03c75a; font-size: 15px; }
-        .channel-cafe .btn-go { background: #03c75a; color: white; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; }
+        .channel-cafe .channel-name { font-size: 12.5px; font-weight: 700; color: #1a202c; display: flex; align-items: center; gap: 6px; }
+        .channel-cafe .channel-name i { color: #03c75a; font-size: 14px; }
+        .channel-cafe .btn-go { background: #03c75a; color: white; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; }
 
         /* 하단 고정형 버튼 */
-        .action-area { padding: 10px 20px 25px 20px; margin-top: auto; }
-        .btn-connect { display: flex; align-items: center; justify-content: center; width: 100%; background: #0f4c81; color: white; padding: 15px; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(15, 76, 129, 0.25); transition: all 0.2s ease; }
-        .btn-connect i { margin-right: 8px; font-size: 16px; }
+        .action-area { padding: 10px 18px 20px 18px; margin-top: auto; }
+        .btn-connect { display: flex; align-items: center; justify-content: center; width: 100%; background: #0f4c81; color: white; padding: 12px; border: none; border-radius: 12px; font-size: 15px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(15, 76, 129, 0.25); transition: all 0.2s ease; }
+        .btn-connect i { margin-right: 6px; font-size: 15px; }
         .btn-connect:active { background: #0a3356; transform: scale(0.99); }
         
-        .footer { text-align: center; font-size: 10px; color: #a0aec0; margin-top: 10px; }
+        .footer { text-align: center; font-size: 10px; color: #a0aec0; margin-top: 8px; }
     </style>
 </head>
 <body>
 
 <div class="wrapper">
-    <!-- 상단 영역: 업로드하신 내부 저장소 이미지 주소로 완전 고정 -->
+    <!-- 상단 영역: 세로 슬림 모드로 완벽 수정 -->
     <div class="hero-banner">
         <img src="./syntec_main.png" alt="SYNTEC 장비 이미지">
     </div>
@@ -158,4 +158,3 @@
 
 </body>
 </html>
-
