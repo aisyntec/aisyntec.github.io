@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SYNTEC TECHNOLOGY - 한국신텍</title>
-    <!-- 구글 폰트 및 아이콘 라이브러리 경로 수정 -->
+    <!-- 외부 아이콘 및 폰트 라이브러리 (보안 차단 우회를 위한 절대 경로 설정) -->
     <link href="https://googleapis.com" rel="stylesheet">
-    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif; }
@@ -79,9 +79,9 @@
 <body>
 
 <div class="wrapper">
-    <!-- 상단 영역: 저장소에 등록하신 파일 경로로 연결 완료 -->
+    <!-- 상단 영역: 올리신 syntec_main.png 파일을 정상적으로 호출하도록 고유 도메인 주소 반영 -->
     <div class="hero-banner">
-        <img src="./syntec_main.png" alt="SYNTEC 장비 이미지">
+        <img src="https://github.io" alt="SYNTEC 장비 이미지">
     </div>
     
     <!-- 메인 본문 콘텐츠 -->
@@ -100,7 +100,7 @@
             </ul>
         </div>
         
-        <!-- 기업 정보 정보 박스 -->
+        <!-- 기업 정보 정보 박스 (보안 우회를 위해 https:// 주소로 전면 수정) -->
         <div class="contact-box">
             <div class="contact-row">
                 <span class="contact-label">문의</span>
@@ -112,7 +112,7 @@
             </div>
             <div class="contact-row">
                 <span class="contact-label">홈페이지</span>
-                <span class="contact-value"><a href="http://syntec.kr" target="_blank">syntec.kr</a></span>
+                <span class="contact-value"><a href="https://syntec.kr" target="_blank">syntec.kr</a></span>
             </div>
         </div>
         
