@@ -64,9 +64,9 @@
         .items-grid li { font-size: 12.5px; color: #4a5568; padding-left: 14px; position: relative; line-height: 1.4; word-break: keep-all; }
         .items-grid li::before { content: "✓"; position: absolute; left: 0; color: #3182ce; font-weight: bold; }
         
-        /* 기업 정보 정보 박스 (문의와 직통 가로 한 줄 정렬) */
+        /* 기업 정보 정보 박스 (직통 번호 좌측 균형 배치 조율 완료 💡) */
         .contact-box { background: #edf2f7; border-radius: 12px; padding: 12px 14px; font-size: 13px; display: flex; flex-direction: column; gap: 6px; }
-        .contact-row-flex { display: flex; align-items: center; width: 100%; justify-content: space-between; }
+        .contact-row-flex { display: flex; align-items: center; width: 100%; justify-content: flex-start; gap: 35px; } /* space-between을 지우고 좌측 밀착(flex-start) 및 간격(gap) 적용 */
         .contact-item { display: flex; align-items: center; }
         .contact-row { display: flex; align-items: center; }
         .contact-label { width: 45px; color: #555555; font-weight: 500; }
@@ -89,12 +89,12 @@
         .channel-cafe .channel-name { font-size: 13px; font-weight: 700; color: #1a202c; }
         .channel-cafe .btn-go { background: #03c75a; color: white; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; text-align: center; }
 
-        /* [구조 정밀 변경 💡] "무료 와이파이 연결하기" 버튼을 최하단이 아닌 content 내부의 목록 바로 밑에 완벽 밀착 배치 */
+        /* [정밀 매칭] 하단 파란색 대형 고정 연결 버튼을 목록 바로 밑에 빈틈없이 바짝 붙였습니다 */
         .btn-connect-container { margin-top: 4px; width: 100%; }
         .btn-connect { display: flex; align-items: center; justify-content: center; width: 100%; background: #0f4c81; color: white; padding: 15px; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(15, 76, 129, 0.25); transition: all 0.2s ease; }
         .btn-connect:active { background: #0a3356; transform: scale(0.99); }
         
-        /* 최하단 저작권 표시 영역 (버튼이 위로 올라감에 따라 단순 정렬 패딩만 유지) */
+        /* 최하단 저작권 표시 영역 */
         .action-area { padding: 10px 20px 16px 20px; }
         .footer { text-align: center; font-size: 10px; color: #a0aec0; }
     </style>
@@ -167,15 +167,15 @@
             </a>
         </div>
 
-        <!-- [정밀 매칭] 하단 파란색 대형 고정 연결 버튼을 목록 바로 밑(content 영역 마지막)에 바짝 붙였습니다 -->
+        <!-- 하단 파란색 대형 고정 연결 버튼 목록 바로 밑 밀착 배치 완료 -->
         <div class="btn-connect-container">
-            <a href="https://www.youtube.com/@Ai-SYNTEC" target="_blank" class="btn-connect">
+            <a href="https://cafe.naver.com/hardinge" target="_blank" class="btn-connect">
                 무료 와이파이 연결하기
             </a>
         </div>
     </div>
     
-    <!-- 최하단 저작권 영역 -->
+    <!-- 최하단 저작권 영역 [정상 출력 복구 완료 💡] -->
     <div class="action-area">
         <p class="footer">© 2026 SYNTEC TECHNOLOGY. All rights reserved.</p>
     </div>
