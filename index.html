@@ -15,10 +15,10 @@
         /* 모바일 최적화 컨테이너 */
         .wrapper { width: 100%; max-width: 450px; background: #ffffff; min-height: 100vh; display: flex; flex-direction: column; box-shadow: 0 0 25px rgba(0,0,0,0.1); position: relative; }
         
-        /* 1. 상단 히어로 배너 (세로폭 축소 및 비율 최적화 수정) */
+        /* 1. 상단 히어로 배너 (내부 이미지 불러오기 최적화 및 세로폭 줄임) */
         .hero-banner { 
             width: 100%;
-            height: 220px; /* 기존보다 세로 크기를 슬림하게 줄였습니다 */
+            height: 220px; /* 세로폭이 슬림하게 적용되었습니다 */
             overflow: hidden;
             border-radius: 0 0 20px 20px; 
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
@@ -80,9 +80,9 @@
 <body>
 
 <div class="wrapper">
-    <!-- 상단 영역: 이미지 배너 -->
+    <!-- 상단 영역: 저장소 내부 파일 안전 경로로 전면 수정 -->
     <div class="hero-banner">
-        <img src="https://github.io" alt="SYNTEC 장비 이미지">
+        <img src="./syntec_main.png" alt="SYNTEC 장비 이미지">
     </div>
     
     <!-- 메인 본문 콘텐츠 -->
