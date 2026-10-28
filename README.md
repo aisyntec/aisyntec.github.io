@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SYNTEC TECHNOLOGY - 한국신텍</title>
+    <!-- 글자 깨짐 오류 방지를 위해 기본 폰트만 유지 -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif; }
+        body { background: #f0f4f8; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; color: #1a202c; padding: 0; }
+        
+        /* 모바일 최적화 컨테이너 (시원한 450px 가로폭) */
+        .wrapper { width: 100%; max-width: 450px; background: #ffffff; min-height: 100vh; display: flex; flex-direction: column; box-shadow: 0 0 25px rgba(0,0,0,0.1); position: relative; }
+        
+        /* 1. 상단 히어로 배너 */
+        .hero-banner { 
+            width: 100% !important;
+            height: auto !important;
+            overflow: hidden;
+            border-radius: 0 0 20px 20px; 
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            background-color: #044da1;
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 0;
+            position: relative;
+        }
+        .hero-banner img {
+            width: 100% !important;
+            height: auto !important;
+            display: block !important;
+        }
+
+        /* [추가] 로고 이미지 밑에 들어갈 지정 딜러 인증 문구 스타일 */
+        .dealer-text {
+            background-color: #044da1;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 500;
+            text-align: center;
+            letter-spacing: 0.5px;
+            padding-bottom: 35px; /* 국기 배너와 겹치지 않도록 하단 여백 확보 */
+            text-shadow: 0px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        /* 2. 국기 배너 영역 */
+        .flag-container {
+            width: 100%;
+            text-align: center;
+            margin-top: -24px;
+            position: relative;
+            z-index: 999;
+            line-height: 0;
+        }
+        .flag-box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .flag-box img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.25));
+        }
+
+        /* 메인 콘텐츠 바디 */
+        .content { padding: 5px 20px 18px 20px; display: flex; flex-grow: 1; flex-direction: column; gap: 14px; }
+        
+        /* 취급품목 섹션 */
+        .items-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 14px; }
+        .items-title { font-size: 13.5px; font-weight: 750; color: #0f4c81; margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
+        .items-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; list-style: none; }
+        .items-grid li { font-size: 12.5px; color: #4a5568; padding-left: 14px; position: relative; line-height: 1.4; word-break: keep-all; }
+        .items-grid li::before { content: "✓"; position: absolute; left: 0; color: #3182ce; font-weight: bold; }
+        
+        /* 기업 정보 정보 박스 */
+        .contact-box { background: #edf2f7; border-radius: 12px; padding: 12px 14px; font-size: 13px; display: flex; flex-direction: column; gap: 6px; }
+        .contact-row-flex { display: flex; align-items: center; width: 100%; justify-content: flex-start; gap: 35px; } 
+        .contact-item { display: flex; align-items: center; }
+        .contact-row { display: flex; align-items: center; }
+        .contact-label { width: 45px; color: #555555; font-weight: 500; }
+        .contact-value { color: #0f4c81; font-weight: 750; }
+        .contact-value a { color: #0f4c81; text-decoration: none; }
+        
+        /* 멀티 링크 그룹 섹션 */
+        .channel-group { display: flex; flex-direction: column; gap: 8px; }
+        .channel-row { display: flex; align-items: center; justify-content: space-between; border-radius: 10px; padding: 10px 14px; text-decoration: none; border: 1px solid transparent; transition: background 0.2s ease; }
+        
+        /* 유튜브 스타일 */
+        .channel-youtube { background: #fdf2f2; border-color: #fde8e8; }
+        .channel-youtube:active { background: #fbe2e2; }
+        .channel-youtube .channel-name { font-size: 13px; font-weight: 700; color: #1a202c; }
+        .channel-youtube .btn-go { background: #ff0000; color: white; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; text-align: center; }
+        
+        /* 네이버 카페 스타일 */
+        .channel-cafe { background: #f2fbf5; border-color: #e2f7e9; }
+        .channel-cafe:active { background: #e2f5e9; }
+        .channel-cafe .channel-name { font-size: 13px; font-weight: 700; color: #1a202c; }
+        .channel-cafe .btn-go { background: #03c75a; color: white; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; text-align: center; }
+
+        /* 하단 파란색 대형 고정 연결 버튼 목록 바로 밑 밀착 */
+        .btn-connect-container { margin-top: 4px; margin-bottom: 0px; width: 100%; }
+        .btn-connect { display: flex; align-items: center; justify-content: center; width: 100%; background: #0f4c81; color: white; padding: 15px; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(15, 76, 129, 0.25); transition: all 0.2s ease; }
+        .btn-connect:active { background: #0a3356; transform: scale(0.99); }
+        
+        /* 최하단 저작권 표시 영역 */
+        .action-area { padding: 1px 20px 1px 20px; }
+        .footer { text-align: center; font-size: 10px; color: #a0aec0; padding-top: 15px; padding-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <!-- 상단 배너 영역 -->
+    <div class="hero-banner">
+        <img src="./syntec_main.png" alt="SYNTEC 장비 이미지">
+        <!-- 상단 배너 이미지 내부 하단에 인증 문구 추가 -->
+        <div class="dealer-text">Authorized Dealer of Ai.Syntec</div>
+    </div>
+    
+    <!-- 국기 중간 걸치기 디자인 영역 -->
+    <div class="flag-container">
+        <div class="flag-box">
+            <img src="./한국대만중국.png" alt="한국 대만 중국 국기 배지">
+        </div>
+    </div>
+    
+    <!-- 메인 본문 콘텐츠 -->
+    <div class="content">
+        
+        <!-- 취급품목 섹션 -->
+        <div class="items-box">
+            <div class="items-title">〔공식〕한국신텍 | シンテック | Since 1998 | 취급 품목 안내</div>
+            <ul class="items-grid">
+                <li>대만∙신텍CNC컨트롤러가 장착된 공작기계 및 산업용로봇 자동화솔루션</li>
+                <li>중국∙공작기계 수입/판매/설치/시운전/교육/수입전문대행</li>
+                <li>신텍 아카데미(교육장)운영</li>
+                <li>대형공작기계 전문설치/시운전</li>
+                <li>대형5축라우터(BCAMCNC)판매</li>
+                <li>원CNC캐드∙캠 판매/교육/지원</li>
+            </ul>
+        </div>
+        
+        <!-- 기업 정보 정보 박스 -->
+        <div class="contact-box">
+            <div class="contact-row-flex">
+                <div class="contact-item">
+                    <span class="contact-label">문의</span>
+                    <span class="contact-value"><a href="tel:070-8615-1134">070-8615-1134</a></span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">직통</span>
+                    <span class="contact-value"><a href="tel:010-2498-8823">010-2498-8823</a></span>
+                </div>
+            </div>
+            <div class="contact-row">
+                <span class="contact-label" style="width: 65px;">홈페이지</span>
+                <span class="contact-value"><a href="https://syntec.kr" target="_blank">syntec.kr</a></span>
+            </div>
+        </div>
+        
+        <!-- 링크 배너 섹션 -->
+        <div class="channel-group">
+            <!-- 채널 1: SYNTEC 컨트롤러 유튜브 -->
+            <a href="https://www.youtube.com/@Ai-SYNTEC" target="_blank" class="channel-row channel-youtube">
+                <div class="channel-name">한국신텍 유투브채널</div>
+                <div class="btn-go">바로가기</div>
+            </a>
+            
+            <!-- 채널 2: OneCNC 캐드∙캠 유튜브 -->
+            <a href="https://www.youtube.com/@OneCAD-CAM" target="_blank" class="channel-row channel-youtube">
+                <div class="channel-name">OneCNC 캐드∙캠 유투브채널</div>
+                <div class="btn-go">바로가기</div>
+            </a>
+            
+            <!-- 채널 3: 한국신텍 공식 카페 -->
+            <a href="https://cafe.naver.com/hardinge" target="_blank" class="channel-row channel-cafe">
+                <div class="channel-name">한국신텍 네이버카페(전문기술자료)</div>
+                <div class="btn-go">바로가기</div>
+            </a>
+        </div>
+
+        <!-- 하단 파란색 대형 고정 연결 버튼 목록 바로 밑 밀착 배치 완료 -->
+        <div class="btn-connect-container">
+            <a href="https://www.youtube.com/@Ai-SYNTEC" target="_blank" class="btn-connect">
+                한국신텍 공식 채널 연결하기
+            </a>
+        </div>
+    </div>
+    
+    <!-- 최하단 영역 -->
+    <div class="action-area">
+        <div class="footer">
+            © SYNTEC TECHNOLOGY. All Rights Reserved.
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
