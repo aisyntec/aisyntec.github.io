@@ -25,11 +25,24 @@
             margin: 0 !important;
             padding: 0 !important;
             line-height: 0;
+            position: relative;
         }
         .hero-banner img {
             width: 100% !important;
             height: auto !important;
             display: block !important;
+        }
+
+        /* [추가] 로고 이미지 밑에 들어갈 지정 딜러 인증 문구 스타일 */
+        .dealer-text {
+            background-color: #044da1;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 500;
+            text-align: center;
+            letter-spacing: 0.5px;
+            padding-bottom: 35px; /* 국기 배너와 겹치지 않도록 하단 여백 확보 */
+            text-shadow: 0px 1px 3px rgba(0,0,0,0.3);
         }
 
         /* 2. 국기 배너 영역 */
@@ -64,9 +77,9 @@
         .items-grid li { font-size: 12.5px; color: #4a5568; padding-left: 14px; position: relative; line-height: 1.4; word-break: keep-all; }
         .items-grid li::before { content: "✓"; position: absolute; left: 0; color: #3182ce; font-weight: bold; }
         
-        /* 기업 정보 정보 박스 (직통 번호 좌측 균형 배치 조율 완료 💡) */
+        /* 기업 정보 정보 박스 */
         .contact-box { background: #edf2f7; border-radius: 12px; padding: 12px 14px; font-size: 13px; display: flex; flex-direction: column; gap: 6px; }
-        .contact-row-flex { display: flex; align-items: center; width: 100%; justify-content: flex-start; gap: 35px; } /* space-between을 지우고 좌측 밀착(flex-start) 및 간격(gap) 적용 */
+        .contact-row-flex { display: flex; align-items: center; width: 100%; justify-content: flex-start; gap: 35px; } 
         .contact-item { display: flex; align-items: center; }
         .contact-row { display: flex; align-items: center; }
         .contact-label { width: 45px; color: #555555; font-weight: 500; }
@@ -89,14 +102,14 @@
         .channel-cafe .channel-name { font-size: 13px; font-weight: 700; color: #1a202c; }
         .channel-cafe .btn-go { background: #03c75a; color: white; padding: 6px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; text-align: center; }
 
-        /* [정밀 매칭] 하단 파란색 대형 고정 연결 버튼을 목록 바로 밑에 빈틈없이 바짝 붙였습니다 */
+        /* 하단 파란색 대형 고정 연결 버튼 목록 바로 밑 밀착 */
         .btn-connect-container { margin-top: 4px; margin-bottom: 0px; width: 100%; }
         .btn-connect { display: flex; align-items: center; justify-content: center; width: 100%; background: #0f4c81; color: white; padding: 15px; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(15, 76, 129, 0.25); transition: all 0.2s ease; }
         .btn-connect:active { background: #0a3356; transform: scale(0.99); }
         
         /* 최하단 저작권 표시 영역 */
         .action-area { padding: 1px 20px 1px 20px; }
-        .footer { text-align: center; font-size: 10px; color: #a0aec0; }
+        .footer { text-align: center; font-size: 10px; color: #a0aec0; padding-top: 15px; padding-bottom: 15px; }
     </style>
 </head>
 <body>
@@ -105,6 +118,8 @@
     <!-- 상단 배너 영역 -->
     <div class="hero-banner">
         <img src="./syntec_main.png" alt="SYNTEC 장비 이미지">
+        <!-- 상단 배너 이미지 내부 하단에 인증 문구 추가 -->
+        <div class="dealer-text">Authorized Dealer of Ai.Syntec</div>
     </div>
     
     <!-- 국기 중간 걸치기 디자인 영역 -->
@@ -172,14 +187,16 @@
         <!-- 하단 파란색 대형 고정 연결 버튼 목록 바로 밑 밀착 배치 완료 -->
         <div class="btn-connect-container">
             <a href="https://www.youtube.com/@Ai-SYNTEC" target="_blank" class="btn-connect">
-                무료 와이파이 연결하기
+                한국신텍 공식 채널 연결하기
             </a>
         </div>
     </div>
     
-    <!-- 최하단 저작권 영역 [정상 출력 복구 완료 💡] -->
+    <!-- 최하단 영역 -->
     <div class="action-area">
-        <p class="footer">© 2026 SYNTEC TECHNOLOGY. All rights reserved.</p>
+        <div class="footer">
+            © SYNTEC TECHNOLOGY. All Rights Reserved.
+        </div>
     </div>
 </div>
 
