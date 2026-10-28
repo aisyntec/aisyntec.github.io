@@ -33,18 +33,19 @@
             display: block !important;
         }
 
-        /* [수정] 우측 상단 SYNTEC 로고 바로 밑에 들어갈 딜러 인증 문구 */
+        /* [수정] 우측 상단 SYNTEC 로고 아래 두 줄로 깔끔하게 떨어지는 스타일 */
         .dealer-text {
             position: absolute;
-            top: 48px;            /* 로고 하단에 맞춘 세로 위치 (배너 상단으로부터의 거리) */
-            right: 25px;          /* 로고 우측 정렬에 맞춘 가로 위치 (배너 우측으로부터의 거리) */
+            top: 42px;            /* 💡 위아래 위치 (로고 바로 아랫줄 간격 조절) */
+            right: 18px;          /* 💡 좌우 위치 (로고 우측 끝선 정렬 조절) */
             color: #ffffff;
-            font-size: 8.5px;     /* 로고 아래 작게 어울리도록 정밀 축소 */
+            font-size: 8px;       /* 이미지와 동일한 콤팩트한 폰트 크기 */
             font-weight: 500;
-            text-align: right;    /* 우측 정렬 */
-            letter-spacing: 0.2px;
-            opacity: 0.9;         /* 로고와 자연스럽게 묻어나도록 아주 미세한 투명도 부여 */
-            text-shadow: 0px 1px 2px rgba(0,0,0,0.4);
+            text-align: right;    /* 오른쪽 정렬 */
+            line-height: 1.2;     /* 두 줄 사이의 간격 */
+            letter-spacing: 0.1px;
+            opacity: 0.95;
+            text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
             z-index: 10;
         }
 
@@ -121,8 +122,8 @@
     <!-- 상단 배너 영역 -->
     <div class="hero-banner">
         <img src="./syntec_main.png" alt="SYNTEC 장비 이미지">
-        <!-- SYNTEC 로고(오른쪽 위)의 바로 아랫자리 위치에 문구 추가 -->
-        <div class="dealer-text">Authorized Dealer of Ai.Syntec</div>
+        <!-- 💡 두 줄 구조(<br> 태그 포함)로 변경하여 우측 정렬 완료 -->
+        <div class="dealer-text">Authorized Dealer of<br>Ai.Syntec</div>
     </div>
     
     <!-- 국기 중간 걸치기 디자인 영역 -->
@@ -195,7 +196,7 @@
         </div>
     </div>
     
-    <!-- 최하단 영역 -->
+    <!-- 최하단 저작권 표시 영역 -->
     <div class="action-area">
         <div class="footer">
             © SYNTEC TECHNOLOGY. All Rights Reserved.
