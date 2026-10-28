@@ -25,7 +25,7 @@
             margin: 0 !important;
             padding: 0 !important;
             line-height: 0;
-            position: relative;
+            position: relative; /* 자식 요소의 기준점이 됨 */
         }
         .hero-banner img {
             width: 100% !important;
@@ -33,16 +33,19 @@
             display: block !important;
         }
 
-        /* [추가] 로고 이미지 밑에 들어갈 지정 딜러 인증 문구 스타일 */
+        /* [수정] 우측 상단 SYNTEC 로고 바로 밑에 들어갈 딜러 인증 문구 */
         .dealer-text {
-            background-color: #044da1;
+            position: absolute;
+            top: 48px;            /* 로고 하단에 맞춘 세로 위치 (배너 상단으로부터의 거리) */
+            right: 25px;          /* 로고 우측 정렬에 맞춘 가로 위치 (배너 우측으로부터의 거리) */
             color: #ffffff;
-            font-size: 13px;
+            font-size: 8.5px;     /* 로고 아래 작게 어울리도록 정밀 축소 */
             font-weight: 500;
-            text-align: center;
-            letter-spacing: 0.5px;
-            padding-bottom: 35px; /* 국기 배너와 겹치지 않도록 하단 여백 확보 */
-            text-shadow: 0px 1px 3px rgba(0,0,0,0.3);
+            text-align: right;    /* 우측 정렬 */
+            letter-spacing: 0.2px;
+            opacity: 0.9;         /* 로고와 자연스럽게 묻어나도록 아주 미세한 투명도 부여 */
+            text-shadow: 0px 1px 2px rgba(0,0,0,0.4);
+            z-index: 10;
         }
 
         /* 2. 국기 배너 영역 */
@@ -118,7 +121,7 @@
     <!-- 상단 배너 영역 -->
     <div class="hero-banner">
         <img src="./syntec_main.png" alt="SYNTEC 장비 이미지">
-        <!-- 상단 배너 이미지 내부 하단에 인증 문구 추가 -->
+        <!-- SYNTEC 로고(오른쪽 위)의 바로 아랫자리 위치에 문구 추가 -->
         <div class="dealer-text">Authorized Dealer of Ai.Syntec</div>
     </div>
     
@@ -166,19 +169,19 @@
         <!-- 링크 배너 섹션 -->
         <div class="channel-group">
             <!-- 채널 1: SYNTEC 컨트롤러 유튜브 -->
-            <a href="https://www.youtube.com/@Ai-SYNTEC" target="_blank" class="channel-row channel-youtube">
+            <a href="https://youtube.com" target="_blank" class="channel-row channel-youtube">
                 <div class="channel-name">한국신텍 유투브채널</div>
                 <div class="btn-go">바로가기</div>
             </a>
             
             <!-- 채널 2: OneCNC 캐드∙캠 유튜브 -->
-            <a href="https://www.youtube.com/@OneCAD-CAM" target="_blank" class="channel-row channel-youtube">
+            <a href="https://youtube.com" target="_blank" class="channel-row channel-youtube">
                 <div class="channel-name">OneCNC 캐드∙캠 유투브채널</div>
                 <div class="btn-go">바로가기</div>
             </a>
             
             <!-- 채널 3: 한국신텍 공식 카페 -->
-            <a href="https://cafe.naver.com/hardinge" target="_blank" class="channel-row channel-cafe">
+            <a href="https://naver.com" target="_blank" class="channel-row channel-cafe">
                 <div class="channel-name">한국신텍 네이버카페(전문기술자료)</div>
                 <div class="btn-go">바로가기</div>
             </a>
@@ -186,7 +189,7 @@
 
         <!-- 하단 파란색 대형 고정 연결 버튼 목록 바로 밑 밀착 배치 완료 -->
         <div class="btn-connect-container">
-            <a href="https://www.youtube.com/@Ai-SYNTEC" target="_blank" class="btn-connect">
+            <a href="https://youtube.com" target="_blank" class="btn-connect">
                 한국신텍 공식 채널 연결하기
             </a>
         </div>
