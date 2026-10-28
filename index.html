@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SYNTEC TECHNOLOGY - 한국신텍</title>
-    <!-- 글자 깨짐 오류 방지를 위해 기본 폰트만 유지 -->
+    <!-- 💡 가는 글씨체 지정을 위해 Roboto 및 Noto Sans KR 폰트 추가 로드 -->
     <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
@@ -33,19 +33,20 @@
             display: block !important;
         }
 
-        /* [수정] 우측 상단 SYNTEC 로고 아래 두 줄로 깔끔하게 떨어지는 스타일 */
+        /* [💡 요청 사항 반영] 로고 오른쪽 끝선 정렬 및 얇은 폰트 스타일 */
         .dealer-text {
             position: absolute;
-            top: 42px;            /* 💡 위아래 위치 (로고 바로 아랫줄 간격 조절) */
-            right: 18px;          /* 💡 좌우 위치 (로고 우측 끝선 정렬 조절) */
+            top: 42px;            /* 위아래 위치 (로고 하단 간격 조절) */
+            right: 18px;          /* 우측 위치 (로고 우측 끝선에 완벽 일치 조절) */
             color: #ffffff;
-            font-size: 8px;       /* 이미지와 동일한 콤팩트한 폰트 크기 */
-            font-weight: 500;
-            text-align: right;    /* 오른쪽 정렬 */
-            line-height: 1.2;     /* 두 줄 사이의 간격 */
-            letter-spacing: 0.1px;
+            font-family: 'Roboto', 'Noto Sans KR', sans-serif; /* 깔끔한 영문용 폰트 우선 지정 */
+            font-size: 8px;       /* 작고 콤팩트한 크기 */
+            font-weight: 300;     /* 💡 요청하신 가는 폰트 두께 적용 (Light) */
+            text-align: right;    /* 💡 두 줄 모두 우측 정렬 */
+            line-height: 1.3;     /* 두 줄 사이의 간격 */
+            letter-spacing: 0px;  /* 기본 자간 유지 */
             opacity: 0.95;
-            text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+            text-shadow: 0px 1px 1px rgba(0,0,0,0.3); /* 글자가 가늘어짐에 따라 섀도우 연하게 조절 */
             z-index: 10;
         }
 
@@ -122,7 +123,7 @@
     <!-- 상단 배너 영역 -->
     <div class="hero-banner">
         <img src="./syntec_main.png" alt="SYNTEC 장비 이미지">
-        <!-- 💡 두 줄 구조(<br> 태그 포함)로 변경하여 우측 정렬 완료 -->
+        <!-- 두 줄 우측 정렬 구조 구성 -->
         <div class="dealer-text">Authorized Dealer of<br>Ai.Syntec</div>
     </div>
     
